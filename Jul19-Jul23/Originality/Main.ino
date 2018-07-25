@@ -4,7 +4,7 @@
 
 #include <MeMegaPi.h>
 
-//Mblockç”Ÿæˆ
+//MblockÉú³É
 //Encoder Motor
 MeEncoderOnBoard Encoder_1(SLOT1);
 MeEncoderOnBoard Encoder_2(SLOT2);
@@ -122,59 +122,59 @@ void setup(){
     Encoder_2.setRatio(46.67);
     Encoder_2.setPosPid(1.8,0,1.2);
     Encoder_2.setSpeedPid(0.18,0,0);
-    //äººå·¥ç¼–å†™
-    //å³è½¬
+    //ÈË¹¤±àĞ´
+    //ÓÒ×ª
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(0);
     _delay(2.5);
     t = 0;
-    //è®¡æ—¶å™¨æ¸…é›¶
+    //¼ÆÊ±Æ÷ÇåÁã
     lastTime = millis()/1000.0;
-    //è¶…å£°æ³¢æ¢æµ‹å¾ªç¯
+    //³¬Éù²¨Ì½²âÑ­»·
     while(!((ultrasonic_7.distanceCm()) < 3))
     {
         _loop();
         Encoder_1.runSpeed(180);
         Encoder_2.runSpeed(70);
     }
-    //å˜é‡t = è®¡æ—¶å™¨
+    //±äÁ¿t = ¼ÆÊ±Æ÷
     t = getLastTime();
     Encoder_1.runSpeed(0);
     Encoder_2.runSpeed(0);
-    //æ‰å¤´
+    //µôÍ·
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(0);
     _delay(5);
-    //å‰è¿›tç§’ï¼ˆè¿”å›ï¼‰
+    //Ç°½øtÃë£¨·µ»Ø£©
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(70);
     _delay(t);
     Encoder_1.runSpeed(0);
     Encoder_2.runSpeed(0);
-    //å³è½¬
+    //ÓÒ×ª
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(0);
     _delay(2.5);
-    //å‰è¿›3ç§’
+    //Ç°½ø3Ãë
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(70);
     _delay(3);
-    //æ‰å¤´
+    //µôÍ·
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(0);
     _delay(5);
-    //å‰è¿›ä¸‰ç§’ï¼ˆè¿”å›ï¼‰
+    //Ç°½øÈıÃë£¨·µ»Ø£©
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(70);
     _delay(3);
-    //æ‰å¤´
+    //µôÍ·
     Encoder_1.runSpeed(180);
     Encoder_2.runSpeed(0);
     _delay(5);
-    //åœæ­¢é©¬è¾¾
+    //Í£Ö¹Âí´ï
     Encoder_1.runSpeed(0);
     Encoder_2.runSpeed(0);
-    //äººå·¥ç¼–å†™ç»“æŸï¼ŒMblockç”Ÿæˆ
+    //ÈË¹¤±àĞ´½áÊø£¬MblockÉú³É
     
 }
 
@@ -196,4 +196,3 @@ void _loop(){
     
     
 }
-
